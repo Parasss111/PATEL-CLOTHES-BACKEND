@@ -7,10 +7,11 @@ const app = express();
 
 app.use(express.json());
 
-app.use(
+ app.use(
   cors({
     origin: "https://patel-frontend.netlify.app",
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
 
@@ -19,8 +20,8 @@ app.use(
     name: "session",
     keys: [process.env.SESSION_SECRET],
     httpOnly: true,
-    sameSite: "lax",
-    secure: false,
+    sameSite: "none",
+    secure: true,
     maxAge: 24 * 60 * 60 * 1000,
   })
 );
