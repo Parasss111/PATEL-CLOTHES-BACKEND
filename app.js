@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://patel-frontend.netlify.app/",
+    origin: "https://patel-frontend.netlify.app",
     credentials: true,
   })
 );
